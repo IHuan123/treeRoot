@@ -1,29 +1,25 @@
-const path = require("path")
-const HtmlWebpackPlugin = require("html-webpack-plugin")
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// webpack公共配置
+const { resolve } = require("path")
+const srcPath = resolve(__dirname, "../src")
 const { CleanWebpackPlugin } = require("clean-webpack-plugin")
+const HtmlWebpackPlugin = require("html-webpack-plugin")
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 module.exports = {
-    // 开发模式使用，方便查错误
-    devtool: "inline-source-map",
-    mode: "development",
     entry: {
-        index: path.resolve(__dirname, "index.ts")
+        index: resolve(srcPath, "index.ts")
     },
     output: {
-        path: path.resolve(__dirname, "dist"),
+        path: resolve(__dirname, "../dist"),
         filename: "js/build.js"
-    },
-    devServer: {
-        static: {
-            directory: path.join(__dirname, 'dist'),
-        },
-        port: 8111,
-        compress: true, //压缩
-        open: true, //自动打开浏览器
     },
     // 用来设置引用模块
     resolve: {
+        //可以不加后缀就可以引用
         extensions: [".ts", ".js"],
+        //路由重命名
+        alias: {
+            "@": resolve(__dirname, "../src")
+        }
     },
     module: {
         /**
@@ -34,44 +30,37 @@ module.exports = {
          */
         rules: [
             {
-                test:/\.m?js$/,
+                test: /\.m?js$/,
                 exclude: /(node_modules|bower_components)/,
-                use:{
-                    loader:'babel-loader',
+                use: {
+                    loader: 'babel-loader',
                     options: {
                         presets: ["@babel/preset-env"]
                     }
                 }
             },
             {
-                test:/\.ts$/,
-                loader:"ts-loader",
+                test: /\.ts$/,
+                loader: "ts-loader",
                 exclude: /(node_modules|bower_components)/,
             },
             {
-                oneOf:[
+                oneOf: [
                     {
                         test: /\.(css|scss)$/,
                         use: [
-                            MiniCssExtractPlugin.loader,"css-loader","sass-loader"
+                            MiniCssExtractPlugin.loader, "css-loader", "sass-loader"
                         ]
                     },
                     //图片处理
                     {
-                        test:/\.(png|jpg|gif|jpeg)$/,
-                        loader:"url-laoder",
-                        options:{
-                            output:"static/images",
-                            esModle:false
+                        test: /\.(png|jpg|gif|jpeg)$/,
+                        loader: "url-laoder",
+                        options: {
+                            output: "static/images",
+                            esModle: false
                         }
                     },
-                    // {
-                    //     test: /\.html$/i,
-                    //     loader: 'html-loader',
-                    //     options:{
-                    //         esModle:false
-                    //     }
-                    // },
                     {
                         test: /\.(woff|woff2|ttf)$/,
                         loader: 'file-loader',
@@ -86,14 +75,18 @@ module.exports = {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin(),
+        new CleanWebpackPlugin({
+            cleanOnceBeforeBuildPatterns: ['**/*', '!favicon.ico', '!lib/**'],//dist文件夹下的favicon.ico文件和lib文件夹下的东西都忽略不进行删除
+        }),
         new MiniCssExtractPlugin({
             filename: 'statics/css/[name].css'
         }),
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, "public/index.html"),
+            template: resolve(__dirname, "../public/index.html"),//指定html模板文件
             filename: "index.html",
-            title: "Split",
+            title: "plum",
+            inject:"head",
+            favicon: '', //指定网站图标
             chunks: ['index'],
             minify: {
                 removeTagWhitespace: true,

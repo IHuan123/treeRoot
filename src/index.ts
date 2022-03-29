@@ -1,6 +1,6 @@
-import { initCanvas, polar2cart, r180, r90, r15 } from "./utils/index";
-import { Debounce, Throttle } from "./utils/tools"
-import useRafFn from "./utils/useRafFn";
+import { initCanvas, polar2cart, r180, r90, r15 } from "@/utils/index";
+import { Debounce, Throttle } from "@/utils/tools"
+import useRafFn from "@/utils/useRafFn";
 const { random } = Math
 const f = {
   start: () => {
