@@ -1,4 +1,3 @@
-export type Vector = [number,number];
 export const r180 = Math.PI
 export const r90 = Math.PI / 2
 export const r60 = Math.PI / 3
