@@ -55,9 +55,10 @@ module.exports = {
                     //图片处理
                     {
                         test: /\.(png|jpg|gif|jpeg)$/,
-                        loader: "url-laoder",
+                        loader: "url-loader",
                         options: {
-                            output: "static/images",
+                            limit: 8 * 1024,
+                            outputPath: "static/images",
                             esModle: false
                         }
                     },
@@ -66,7 +67,7 @@ module.exports = {
                         loader: 'file-loader',
                         options: {
                             outputPath: 'static/iconfont',
-                            publicPath: '../iconfont'
+                            publicPath: '../static/iconfont'
                         },
                         exclude: /\.(css|html|png|jpg|gif|jpeg)/
                     }
@@ -79,7 +80,7 @@ module.exports = {
             cleanOnceBeforeBuildPatterns: ['**/*', '!favicon.ico', '!lib/**'],//dist文件夹下的favicon.ico文件和lib文件夹下的东西都忽略不进行删除
         }),
         new MiniCssExtractPlugin({
-            filename: 'statics/css/[name].css'
+            filename: 'static/css/[name][hash:4].css'
         }),
         new HtmlWebpackPlugin({
             template: resolve(__dirname, "../public/index.html"),//指定html模板文件

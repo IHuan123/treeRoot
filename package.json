@@ -38,6 +38,6 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
-    "@vueuse/core": "^8.1.2"
+    "jQuery": "^1.7.4"
   }
 }
