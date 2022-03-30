@@ -22,8 +22,8 @@ export default class Plum {
     //上一个点
     private prevSteps: any[] = []
     private iterations = 0
-    private len: number = 5
-    private init: number = 5
+    private readonly len: number = 5
+    private readonly init: number = 5
 
 
     constructor(options:Options = defaultOptions) {
