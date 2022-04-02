@@ -1,7 +1,7 @@
 
 class Raf  {
-    timer:number = -1
-    callbackFn:Function = ()=>{}
+    private timer:number = -1
+    private callbackFn:Function = ()=>{}
     isActive:Boolean = false
     constructor(fn:Function){
         this.callbackFn = fn
@@ -9,7 +9,7 @@ class Raf  {
         this.resume = this.resume.bind(this)
         this.pause = this.pause.bind(this)
     }
-    loop(){
+    private loop(){
         if(!this.isActive) return;
         this.callbackFn()
         this.timer = requestAnimationFrame(this.loop)
