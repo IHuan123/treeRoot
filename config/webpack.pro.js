@@ -6,7 +6,7 @@ const common = require('./webpack.common.js'); //引入公共配置
 module.exports = merge(common, {
     mode: "production",
     optimization: {
-        minimizer: [new OptimizeCSSAssetsPlugin({})],//css压缩混稀
+        //minimizer: [new OptimizeCSSAssetsPlugin({})],//css压缩混稀
         minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})]//js压缩混稀
     }
 });
