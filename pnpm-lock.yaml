@@ -13,7 +13,7 @@ specifiers:
   mini-css-extract-plugin: ^2.6.0
   optimize-css-assets-webpack-plugin: ^6.0.1
   postcss-loader: ^6.2.1
-  sass: ^1.55.0
+  sass: ^1.52.1
   sass-loader: ^12.6.0
   style-loader: ^3.3.1
   terser-webpack-plugin: ^5.3.1
@@ -40,8 +40,8 @@ devDependencies:
   mini-css-extract-plugin: 2.6.0_webpack@5.70.0
   optimize-css-assets-webpack-plugin: 6.0.1_webpack@5.70.0
   postcss-loader: 6.2.1_webpack@5.70.0
-  sass: 1.55.0
-  sass-loader: 12.6.0_sass@1.55.0+webpack@5.70.0
+  sass: 1.52.1
+  sass-loader: 12.6.0_sass@1.52.1+webpack@5.70.0
   style-loader: 3.3.1_webpack@5.70.0
   terser-webpack-plugin: 5.3.1_webpack@5.70.0
   ts-loader: 9.2.8_ougmcaqwpyw5y5phguoka2ilpy
@@ -2874,8 +2874,13 @@ packages:
     engines: {node: '>= 4'}
     dev: true
 
+<<<<<<< HEAD
   /immutable/4.1.0:
     resolution: {integrity: sha512-oNkuqVTA8jqG1Q6c+UglTOD1xhC1BtjKI7XkCXRkZHrN5m18/XsnUp8Q89GkQO/z+0WjonSvl0FLhDYftp46nQ==}
+=======
+  /immutable/4.0.0:
+    resolution: {integrity: sha512-zIE9hX70qew5qTUjSS7wi1iwj/l7+m54KWU247nhM3v806UdGj1yDndXj+IOYxxtW9zyLI+xqFNZjTuDaLUqFw==}
+>>>>>>> 3f59c726db99256adab5721df1e107cb346bd66d
     dev: true
 
   /import-fresh/3.3.0:
@@ -4193,7 +4198,11 @@ packages:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
     dev: true
 
+<<<<<<< HEAD
   /sass-loader/12.6.0_sass@1.55.0+webpack@5.70.0:
+=======
+  /sass-loader/12.6.0_sass@1.52.1+webpack@5.70.0:
+>>>>>>> 3f59c726db99256adab5721df1e107cb346bd66d
     resolution: {integrity: sha512-oLTaH0YCtX4cfnJZxKSLAyglED0naiYfNG1iXfU5w1LNZ+ukoA5DtyDIN5zmKVZwYNJP4KRc5Y3hkWga+7tYfA==}
     engines: {node: '>= 12.13.0'}
     peerDependencies:
@@ -4214,17 +4223,30 @@ packages:
     dependencies:
       klona: 2.0.5
       neo-async: 2.6.2
+<<<<<<< HEAD
       sass: 1.55.0
       webpack: 5.70.0_webpack-cli@4.9.2
     dev: true
 
   /sass/1.55.0:
     resolution: {integrity: sha512-Pk+PMy7OGLs9WaxZGJMn7S96dvlyVBwwtToX895WmCpAOr5YiJYEUJfiJidMuKb613z2xNWcXCHEuOvjZbqC6A==}
+=======
+      sass: 1.52.1
+      webpack: 5.70.0_webpack-cli@4.9.2
+    dev: true
+
+  /sass/1.52.1:
+    resolution: {integrity: sha512-fSzYTbr7z8oQnVJ3Acp9hV80dM1fkMN7mSD/25mpcct9F7FPBMOI8krEYALgU1aZoqGhQNhTPsuSmxjnIvAm4Q==}
+>>>>>>> 3f59c726db99256adab5721df1e107cb346bd66d
     engines: {node: '>=12.0.0'}
     hasBin: true
     dependencies:
       chokidar: 3.5.3
+<<<<<<< HEAD
       immutable: 4.1.0
+=======
+      immutable: 4.0.0
+>>>>>>> 3f59c726db99256adab5721df1e107cb346bd66d
       source-map-js: 1.0.2
     dev: true
 
