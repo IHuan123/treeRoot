@@ -6,7 +6,7 @@ export class Debounce {
  * @param immediate 是否默认执行一次(第一次不延迟)
  */
     public use = (fn: Function, delay: number = 1000, immediate: Boolean = false): Function => {
-        let timer: NodeJS.Timeout | null
+        let timer: number | null
         return (...args: any) => {
             if (timer) clearTimeout(timer)
             if (immediate) {
